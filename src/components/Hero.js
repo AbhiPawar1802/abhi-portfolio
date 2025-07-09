@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaChevronDown } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { ReactTyped } from 'react-typed';
 
@@ -216,7 +216,7 @@ const Hero = ({ darkMode }) => {
           onClick={() => document.querySelector('#about').scrollIntoView({ behavior: 'smooth' })}
           aria-label="Scroll down to About section"
         >
-          ⭣
+          <FaChevronDown />
         </motion.div>
       </Container>
     </section>
