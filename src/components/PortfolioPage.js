@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FaFileAlt } from 'react-icons/fa';
 import Hero from './Hero';
 import About from './About';
