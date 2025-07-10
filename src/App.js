@@ -15,6 +15,7 @@ import Certifications from './components/Certifications';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
+import SEO from './components/SEO';
 
 const NAVBAR_HEIGHT = 65;
 
@@ -59,18 +60,25 @@ const RoutesWithLoading = ({ darkMode }) => {
   if (loading) return <Spinner />;
 
   return (
-    <div style={{ paddingTop: `${NAVBAR_HEIGHT + 20}px` }}>
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<PortfolioPage darkMode={darkMode} />} />
-        <Route path="/resume" element={<Resume darkMode={darkMode} />} />
-        <Route path="/contact" element={<ContactPage darkMode={darkMode} />} />
-        <Route path="/about" element={<About darkMode={darkMode} />} />
-        <Route path="/certifications" element={<Certifications darkMode={darkMode} />} />
-        <Route path="/hero" element={<Hero darkMode={darkMode} />} />
-        <Route path="/project" element={<Projects darkMode={darkMode} />} />
-        <Route path="/skills" element={<Skills darkMode={darkMode} />} />
-      </Routes>
-    </div>
+    <>
+      <SEO 
+          title="Abhi Pawar - Master Computer Application | Software Developer"
+          description="Portfolio of Abhi Pawar - MCA student and software developer specializing in React, Node.js, and full-stack projects."
+          keywords="React, Node.js, Full-stack, Software Developer, Abhi Pawar, Portfolio"
+      />
+      <div style={{ paddingTop: `${NAVBAR_HEIGHT + 20}px` }}>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<PortfolioPage darkMode={darkMode} />} />
+          <Route path="/resume" element={<Resume darkMode={darkMode} />} />
+          <Route path="/contact" element={<ContactPage darkMode={darkMode} />} />
+          <Route path="/about" element={<About darkMode={darkMode} />} />
+          <Route path="/certifications" element={<Certifications darkMode={darkMode} />} />
+          <Route path="/hero" element={<Hero darkMode={darkMode} />} />
+          <Route path="/project" element={<Projects darkMode={darkMode} />} />
+          <Route path="/skills" element={<Skills darkMode={darkMode} />} />
+        </Routes>
+      </div>
+    </>
   );
 };
 

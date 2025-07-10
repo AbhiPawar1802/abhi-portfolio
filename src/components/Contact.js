@@ -12,9 +12,8 @@ const Contact = ({ darkMode }) => {
   const [successAnim, setSuccessAnim] = useState(false);
 
   const primaryColor = darkMode ? '#54b689' : '#0d6efd';
-  const errorColor = '#dc3545'; // Bootstrap red
+  const errorColor = '#dc3545'; 
 
-  // Input focus & values for floating labels
   const [focusedInput, setFocusedInput] = useState({ name: false, email: false, message: false });
   const [inputValues, setInputValues] = useState({ name: '', email: '', message: '' });
 
@@ -262,7 +261,6 @@ const Contact = ({ darkMode }) => {
                   )}
                 </div>
 
-                {/* Message textarea */}
                 <div className="position-relative mb-4" style={{ flexGrow: 1 }}>
                   <textarea
                     id="message"

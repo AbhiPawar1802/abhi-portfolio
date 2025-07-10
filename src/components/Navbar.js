@@ -63,7 +63,7 @@ const Navbar = ({ darkMode, toggleDarkMode, setIsNavOpen }) => {
     ['/skills', <FaCode />, 'Skills'],
     ['/resume', <FaFileAlt />, 'Resume'],
     ['/certifications', <FaCertificate />, 'Certifications'],
-    ['/contact', <FaEnvelope />, 'Contact'],
+    ['/contact', <FaEnvelope />, 'Contact'], 
   ];
 
   const SidebarContent = () => (
