@@ -1,3 +1,5 @@
+// src/components/PortfolioPage.jsx
+
 import React from 'react';
 import { FaFileAlt } from 'react-icons/fa';
 import Hero from './Hero';
@@ -8,6 +10,7 @@ import Skills from './Skills';
 import Certificate from './Certifications';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
+import VoiceAssistant from './VoiceAssistant';
 
 const PortfolioPage = ({ darkMode }) => {
   const primaryGreen = '#54b689';
@@ -48,6 +51,7 @@ const PortfolioPage = ({ darkMode }) => {
       <Certificate darkMode={darkMode} />
       <Contact darkMode={darkMode} />
       <Footer darkMode={darkMode} />
+      <VoiceAssistant />
     </>
   );
 };
