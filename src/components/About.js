@@ -46,7 +46,8 @@ const SkillBadge = ({ icon, label, gradient }) => (
 );
 
 const About = ({ darkMode }) => {
-  const textColor = '#ffffff';
+  // Dynamic text color for normal text
+  const textColor = darkMode ? '#ffffff' : '#111111'; // white for dark mode, dark gray for light mode
   const quoteBg = darkMode ? '#1E293B' : '#f1f5f9';
   const quoteText = darkMode ? '#ffffffb3' : '#334155';
   const quoteBorder = darkMode ? '#54b689' : '#6366f1';
@@ -75,7 +76,7 @@ const About = ({ darkMode }) => {
         padding: '10px 20px',
         maxWidth: '1100px',
         margin: 'auto',
-        color: textColor,
+        color: textColor, // apply dynamic text color here
         fontFamily: "'Manrope', sans-serif",
       }}
     >
@@ -86,7 +87,7 @@ const About = ({ darkMode }) => {
           borderLeft: `6px solid ${darkMode ? '#54b689' : '#6366f1'}`,
           paddingLeft: '16px',
           marginBottom: '40px',
-          color: textColor,
+          color: textColor, // dynamic color
           fontFamily: "'Plus Jakarta Sans', sans-serif",
         }}
       >
@@ -102,7 +103,7 @@ const About = ({ darkMode }) => {
         }}
       >
         <div style={{ flex: '1 1 500px', fontSize: '1rem', lineHeight: '1.8' }}>
-          <p style={{ marginBottom: '20px' }}>
+          <p style={{ marginBottom: '20px', color: textColor }}>
             Hello! I’m{' '}
             <span
               style={{
@@ -118,7 +119,7 @@ const About = ({ darkMode }) => {
             , a passionate software engineer with a love for building scalable, efficient web
             applications.
           </p>
-          <p style={{ marginBottom: '20px' }}>
+          <p style={{ marginBottom: '20px', color: textColor }}>
             I’m currently pursuing{' '}
             <span
               style={{
@@ -154,7 +155,7 @@ const About = ({ darkMode }) => {
             </span>
             . I enjoy bringing ideas to life with clean and modern technologies.
           </p>
-          <p style={{ fontSize: '1.10rem' }}>
+          <p style={{ fontSize: '1.10rem', color: textColor }}>
             My core strengths include working with{' '}
             <span
               style={{

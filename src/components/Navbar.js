@@ -63,7 +63,7 @@ const Navbar = ({ darkMode, toggleDarkMode, setIsNavOpen }) => {
     ['/skills', <FaCode />, 'Skills'],
     ['/resume', <FaFileAlt />, 'Resume'],
     ['/certifications', <FaCertificate />, 'Certifications'],
-    ['/contact', <FaEnvelope />, 'Contact'], 
+    ['/contact', <FaEnvelope />, 'Contact'],
   ];
 
   const SidebarContent = () => (
@@ -282,16 +282,38 @@ const Navbar = ({ darkMode, toggleDarkMode, setIsNavOpen }) => {
 
       {/* Mobile Sidebar */}
       {isMobile ? (
-        <div
-          style={{
-            height: sidebarHeight,
-            overflow: 'hidden',
-            transition: 'height 0.4s ease-in-out',
-          }}
-        >
-          <SidebarContent />
-        </div>
+        <>
+          <div
+            style={{
+              height: sidebarHeight,
+              overflow: 'hidden',
+              transition: 'height 0.4s ease-in-out',
+            }}
+          >
+            <SidebarContent />
+          </div>
+
+          {/* Overlay for mobile */}
+          {showSidebar && (
+            <div
+              onClick={() => setShowSidebar(false)}
+              style={{
+                position: 'fixed',
+                top: '65px',
+                left: 0,
+                width: '100%',
+                height: `calc(100vh - 65px)`,
+                backgroundColor: 'rgba(0,0,0,0.45)', // No blur here
+                zIndex: 1035,
+                transition: 'opacity 0.3s ease',
+                cursor: 'pointer',
+              }}
+              aria-hidden="true"
+            />
+          )}
+        </>
       ) : (
+        // Desktop Sidebar
         <div
           style={{
             position: 'fixed',
@@ -315,9 +337,9 @@ const Navbar = ({ darkMode, toggleDarkMode, setIsNavOpen }) => {
             background: ${darkMode ? '#1E293B' : '#54b689'};
           }
           div::-webkit-scrollbar-thumb {
-            background-color: ${darkMode ? '#0E141D' : '#388e75'}; /* darker mint green in light mode */
+            background-color: ${darkMode ? '#0E141D' : '#388e75'};
             border-radius: 10px;
-            border: 2px solid ${darkMode ? '#1E293B' : '#54b689'}; /* so thumb has padding/match look */
+            border: 2px solid ${darkMode ? '#1E293B' : '#54b689'};
           }
         `}</style>
 

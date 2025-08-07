@@ -12,7 +12,6 @@ import {
   SiJavascript,
 } from 'react-icons/si';
 
-// Lazy load Modal for performance
 const Modal = lazy(() => import('./Model'));
 
 const containerVariants = {
